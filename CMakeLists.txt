@@ -6,6 +6,12 @@ add_executable(RogueLikeV2
         src/main.cpp
         src/RogueLikeV2.cpp
         src/RogueLikeV2.h
+        src/Objects/Entities/Player.cpp
+        src/Objects/Entities/Player.h
+        src/Objects/RogueObject.cpp
+        src/Objects/RogueObject.h
+        src/Objects/Entities/Entity.cpp
+        src/Objects/Entities/Entity.h
 )
 include_directories(src)
 
