@@ -11,7 +11,6 @@
 void RogueLikeV2::launch()
 {
     std::cout << "Application Starting" << std::endl;
-
     while (!EngineBase::shouldAppClose())
     {
         HotKeyManager::handleHotKeys();
