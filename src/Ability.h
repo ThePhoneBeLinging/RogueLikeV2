@@ -12,7 +12,7 @@ public:
     Ability(int cooldown);
     void use();
     bool isReady() ;
-    Timer cooldownTimer;
+    Timer mCooldownTimer;
 };
 
 

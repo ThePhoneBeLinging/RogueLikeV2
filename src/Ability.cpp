@@ -4,18 +4,18 @@
 
 #include "Ability.h"
 
-Ability::Ability(int cooldown) : cooldownTimer(cooldown)
+Ability::Ability(int cooldown) : mCooldownTimer(cooldown)
 {
 }
 
 void Ability::use()
 {
-    cooldownTimer.start();
+    mCooldownTimer.start();
 }
 
 bool Ability::isReady()
 {
-    if(cooldownTimer.milliSecondsLeft()!=0)
+    if(mCooldownTimer.milliSecondsLeft()!=0)
     {
         return false;
     }else{
