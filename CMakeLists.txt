@@ -16,6 +16,10 @@ add_executable(RogueLikeV2
         src/Objects/RogueObject.h
         src/Objects/Entities/Entity.cpp
         src/Objects/Entities/Entity.h
+        src/Ability.cpp
+        src/Ability.h
+        src/Ability.h
+        src/Ability.h
 )
 include_directories(src)
 
