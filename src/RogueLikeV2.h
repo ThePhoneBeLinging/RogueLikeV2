@@ -12,6 +12,7 @@ class RogueLikeV2
 public:
     static void launch();
 private:
+    static void loadInitialTextures();
 };
 
 

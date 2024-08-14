@@ -3,6 +3,7 @@
 //
 
 #include "RogueLikeV2.h"
+#include "Utility/Timer.h"
 
 #include <iostream>
 #include <EngineBase/EngineBase.h>
@@ -11,9 +12,27 @@
 void RogueLikeV2::launch()
 {
     std::cout << "Application Starting" << std::endl;
+
+    loadInitialTextures();
+    auto loopKeeper = Timer(33);
+    loopKeeper.start();
     while (!EngineBase::shouldAppClose())
     {
+        if (loopKeeper.milliSecondsLeft() != 0)
+        {
+            continue;
+        }
+        loopKeeper.start();
+
         HotKeyManager::handleHotKeys();
-        //Main loop
     }
+}
+
+void RogueLikeV2::loadInitialTextures()
+{
+    EngineBase::addTexture("Resources/Images/BBishop.png",0,0);
+    EngineBase::addTexture("Resources/Images/BKing.png",0,1);
+    EngineBase::addTexture("Resources/Images/WBishop.png",0,2);
+    EngineBase::addTexture("Resources/Images/WKing.png",0,3);
+    EngineBase::addTexture("Resources/Images/player.png",1,0);
 }

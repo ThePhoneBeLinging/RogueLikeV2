@@ -11,7 +11,7 @@ class RogueObject {
 public:
     RogueObject();
     DrawAbleObject* getDrawAble();
-private:
+protected:
     DrawAbleObject mDrawAble;
 };
 
