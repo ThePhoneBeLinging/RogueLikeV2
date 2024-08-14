@@ -27,4 +27,5 @@ void RogueLikeV2::loadInitialTextures()
     EngineBase::addTexture("Resources/Images/BKing.png",0,1);
     EngineBase::addTexture("Resources/Images/WBishop.png",0,2);
     EngineBase::addTexture("Resources/Images/WKing.png",0,3);
+    EngineBase::addTexture("Resources/Images/player.png",1,0);
 }

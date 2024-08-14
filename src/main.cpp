@@ -1,6 +1,7 @@
 #include <thread>
 #include <EngineBase/DrawAbleObject.h>
 #include <EngineBase/EngineBase.h>
+#include "Objects/Entities/Player.h"
 
 #include "RogueLikeV2.h"
 
@@ -11,6 +12,8 @@ int main()
     testObject->mTextureManager.setAnimationEndIndex(4);
     testObject->addToScene(0);
     EngineBase::toggleFPSCounter();
+
+    Player player = Player();
 
     auto main = std::thread(RogueLikeV2::launch);
     EngineBase::startGUI();
