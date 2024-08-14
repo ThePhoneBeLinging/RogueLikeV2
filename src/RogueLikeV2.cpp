@@ -3,6 +3,7 @@
 //
 
 #include "RogueLikeV2.h"
+#include "Utility/Timer.h"
 
 #include <iostream>
 #include <EngineBase/EngineBase.h>
@@ -13,10 +14,18 @@ void RogueLikeV2::launch()
     std::cout << "Application Starting" << std::endl;
 
     loadInitialTextures();
-
+    Timer loopKeeper = Timer(33);
+    loopKeeper.start();
     while (!EngineBase::shouldAppClose())
     {
-        //Main loop
+        if (loopKeeper.milliSecondsLeft() != 0)
+        {
+            continue;
+        }
+        else
+        {
+            loopKeeper.start();
+        }
         HotKeyManager::handleHotKeys();
     }
 }

@@ -14,17 +14,17 @@ Player::Player() : Entity(50)
     this->mDrawAble.mTextureManager.setTextureIndex(1);
     this->mDrawAble.addToScene(0);
     HotKeyManager::addOnKeyPress(KEY_A, [this](){
-        this->mDrawAble.setX(this->mDrawAble.getX() - 10);
-    }, TriggerOnce);
+        this->mDrawAble.setX(this->mDrawAble.getX() - 1);
+    }, TriggerContinuously);
     HotKeyManager::addOnKeyPress(KEY_D, [this](){
-        this->mDrawAble.setX(this->mDrawAble.getX() + 10);
-    }, TriggerOnce);
+        this->mDrawAble.setX(this->mDrawAble.getX() + 1);
+    }, TriggerContinuously);
     HotKeyManager::addOnKeyPress(KEY_W, [this](){
-        this->mDrawAble.setY(this->mDrawAble.getY() - 10);
-    }, TriggerOnce);
+        this->mDrawAble.setY(this->mDrawAble.getY() - 1);
+    }, TriggerContinuously);
     HotKeyManager::addOnKeyPress(KEY_S, [this](){
-        this->mDrawAble.setY(this->mDrawAble.getY() + 10);
-    }, TriggerOnce);
+        this->mDrawAble.setY(this->mDrawAble.getY() + 1);
+    }, TriggerContinuously);
 
 }
 
