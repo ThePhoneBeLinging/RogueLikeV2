@@ -15,15 +15,9 @@ add_executable(RogueLikeV2
 )
 include_directories(src)
 
-include(FetchContent)
-FetchContent_Declare(
+add_subdirectory(dependencies/Utility)
+add_subdirectory(dependencies/EngineBase)
+target_link_libraries(RogueLikeV2 PUBLIC
+        Utility
         EngineBase
-        GIT_REPOSITORY https://github.com/ThePhoneBeLinging/EngineBase.git
-        GIT_TAG main
 )
-FetchContent_MakeAvailable(EngineBase)
-
-target_include_directories(RogueLikeV2 PUBLIC
-        src
-)
-target_link_libraries(RogueLikeV2 PUBLIC EngineBase)
