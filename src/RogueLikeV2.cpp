@@ -14,7 +14,7 @@ void RogueLikeV2::launch()
     std::cout << "Application Starting" << std::endl;
 
     loadInitialTextures();
-    Timer loopKeeper = Timer(33);
+    auto loopKeeper = Timer(33);
     loopKeeper.start();
     while (!EngineBase::shouldAppClose())
     {
@@ -22,10 +22,8 @@ void RogueLikeV2::launch()
         {
             continue;
         }
-        else
-        {
-            loopKeeper.start();
-        }
+        loopKeeper.start();
+
         HotKeyManager::handleHotKeys();
     }
 }
