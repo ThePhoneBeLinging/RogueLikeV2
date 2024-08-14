@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.28)
 project(RogueLikeV2)
 
 set(CMAKE_CXX_STANDARD 20)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Resources
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 add_executable(RogueLikeV2
         src/main.cpp
         src/RogueLikeV2.cpp
