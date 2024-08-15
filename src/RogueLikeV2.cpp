@@ -13,6 +13,13 @@
 void RogueLikeV2::launch()
 {
     std::cout << "Application Starting" << std::endl;
+
+    auto testObject = new DrawAbleObject(50, 50, 50, 50);
+    testObject->mTextureManager.setFramesPerAnimationFrame(200);
+    testObject->mTextureManager.setTextureIndex(2);
+    testObject->mTextureManager.setAnimationEndIndex(4);
+    testObject->addToScene(0);
+
     loadInitialTextures();
     auto loopKeeper = Timer(33);
     loopKeeper.start();
