@@ -4,7 +4,7 @@
 
 #include "Player.h"
 #include <EngineBase/HotKeyManager.h>
-
+///TODO Update HP
 Player::Player() : Entity(50)
 {
     this->mDrawAble.setWidth(50);
