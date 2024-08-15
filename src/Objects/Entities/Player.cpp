@@ -9,8 +9,11 @@ Player::Player() : Entity(50)
 {
     this->mDrawAble.setWidth(50);
     this->mDrawAble.setHeight(50);
-    this->mDrawAble.setX(200);
-    this->mDrawAble.setY(200);
+    //
+    // x and y on the player must be set to 0, as the camera is using this value to offset other objects
+    //
+    this->mDrawAble.setX(0);
+    this->mDrawAble.setY(0);
     this->mDrawAble.mTextureManager.setTextureIndex(1);
     this->mDrawAble.addToScene(0);
     HotKeyManager::addOnKeyPress(KEY_A, [this](){

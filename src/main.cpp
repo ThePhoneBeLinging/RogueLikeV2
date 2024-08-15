@@ -7,16 +7,15 @@
 
 int main()
 {
-    auto testObject = new DrawAbleObject(50,50,50,50);
+    auto testObject = new DrawAbleObject(50, 50, 50, 50);
     testObject->mTextureManager.setFramesPerAnimationFrame(200);
+    testObject->mTextureManager.setTextureIndex(2);
     testObject->mTextureManager.setAnimationEndIndex(4);
     testObject->addToScene(0);
     EngineBase::toggleFPSCounter();
 
     Player player = Player();
     EngineBase::setObjectToFollow(player.getDrawAble());
-
-
 
 
     auto main = std::thread(RogueLikeV2::launch);
