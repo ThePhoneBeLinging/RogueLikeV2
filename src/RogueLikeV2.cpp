@@ -30,9 +30,9 @@ void RogueLikeV2::launch()
 
 void RogueLikeV2::loadInitialTextures()
 {
-    EngineBase::addTexture("Resources/Images/BBishop.png",0,0);
-    EngineBase::addTexture("Resources/Images/BKing.png",0,1);
-    EngineBase::addTexture("Resources/Images/WBishop.png",0,2);
-    EngineBase::addTexture("Resources/Images/WKing.png",0,3);
+    EngineBase::addTexture("Resources/Images/BBishop.png",2,0);
+    EngineBase::addTexture("Resources/Images/BKing.png",2,1);
+    EngineBase::addTexture("Resources/Images/WBishop.png",2,2);
+    EngineBase::addTexture("Resources/Images/WKing.png",2,3);
     EngineBase::addTexture("Resources/Images/player.png",1,0);
 }
