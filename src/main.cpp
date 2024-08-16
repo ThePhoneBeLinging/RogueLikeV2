@@ -8,11 +8,6 @@
 int main()
 {
     EngineBase::toggleFPSCounter();
-
-    Player player = Player();
-    EngineBase::setObjectToFollow(player.getDrawAble());
-
-
     auto main = std::thread(RogueLikeV2::launch);
     EngineBase::startGUI();
     main.join();

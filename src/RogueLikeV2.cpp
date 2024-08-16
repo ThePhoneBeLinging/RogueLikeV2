@@ -10,6 +10,8 @@
 #include <EngineBase/EngineBase.h>
 #include <EngineBase/HotKeyManager.h>
 
+#include "Objects/Entities/Player.h"
+
 void RogueLikeV2::launch()
 {
     std::cout << "Application Starting" << std::endl;
@@ -23,6 +25,11 @@ void RogueLikeV2::launch()
     loadInitialTextures();
     auto loopKeeper = Timer(33);
     loopKeeper.start();
+
+
+    Player player = Player();
+    EngineBase::setObjectToFollow(player.getDrawAble());
+
     while (!EngineBase::shouldAppClose())
     {
         if (loopKeeper.milliSecondsLeft() != 0)
