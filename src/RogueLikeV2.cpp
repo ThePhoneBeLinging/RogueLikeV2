@@ -38,6 +38,10 @@ void RogueLikeV2::launch()
         }
         loopKeeper.start();
 
+        if (!player.getDrawAble()->getCollidingDrawAbles().empty())
+        {
+            std::cout << "Collision" << std::endl;
+        }
         HotKeyManager::handleHotKeys();
     }
 }
