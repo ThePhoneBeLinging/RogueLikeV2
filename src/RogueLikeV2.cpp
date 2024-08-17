@@ -21,7 +21,7 @@ void RogueLikeV2::launch()
     testObject->mTextureManager.setTextureIndex(2);
     testObject->mTextureManager.setAnimationEndIndex(4);
     testObject->addToScene(0);
-
+    testObject->mCollisionManager.setCollisionMode(Collide);
     loadInitialTextures();
     auto loopKeeper = Timer(33);
     loopKeeper.start();
@@ -29,6 +29,7 @@ void RogueLikeV2::launch()
 
     Player player = Player();
     EngineBase::setObjectToFollow(player.getDrawAble());
+    player.getDrawAble()->mCollisionManager.setCollisionMode(Collide);
 
     while (!EngineBase::shouldAppClose())
     {
