@@ -21,7 +21,7 @@ void RogueLikeV2::launch()
     testObject->mTextureManager.setTextureIndex(2);
     testObject->mTextureManager.setAnimationEndIndex(4);
     testObject->addToScene(0);
-    testObject->mCollisionManager.setCollisionMode(Collide);
+    testObject->mCollisionManager.setCollisionMode(CollisionMode::HandleElseWhere);
     loadInitialTextures();
     auto loopKeeper = Timer(33);
     loopKeeper.start();
@@ -39,10 +39,11 @@ void RogueLikeV2::launch()
         }
         loopKeeper.start();
 
-        if (!player.getDrawAble()->getCollidingDrawAbles().empty())
+        for (auto drawAble : player.getDrawAble()->mCollisionManager.getCollidingObjects())
         {
-            std::cout << "Collision" << std::endl;
+            drawAble->deleteObject();
         }
+
         HotKeyManager::handleHotKeys();
     }
 }
