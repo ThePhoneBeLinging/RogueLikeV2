@@ -16,32 +16,22 @@ void RogueLikeV2::launch()
 {
     std::cout << "Application Starting" << std::endl;
 
-    auto testObject = new DrawAbleObject(200, 200, 50, 50);
-    testObject->mTextureManager.setFramesPerAnimationFrame(200);
-    testObject->mTextureManager.setTextureIndex(2);
-    testObject->mTextureManager.setAnimationEndIndex(4);
-    testObject->addToScene(0);
-    testObject->mCollisionManager.setCollisionMode(CollisionMode::HandleElseWhere);
-    testObject->mVelocityManager.setVelocity(-1,0);
+    auto testObject = DrawAbleObject(200, 200, 50, 50);
+    testObject.mTextureManager.setFramesPerAnimationFrame(200);
+    testObject.mTextureManager.setTextureIndex(2);
+    testObject.mTextureManager.setAnimationEndIndex(4);
+    testObject.addToScene(0);
+    testObject.mCollisionManager.setCollisionMode(CollisionMode::HandleElseWhere);
     loadInitialTextures();
-    auto loopKeeper = Timer(33);
-    loopKeeper.start();
-
-
     Player player = Player();
     EngineBase::setObjectToFollow(player.getDrawAble());
     player.getDrawAble()->mCollisionManager.setCollisionMode(Collide);
 
-    while (!EngineBase::shouldAppClose())
+    auto updateFunction = []()
     {
-        if (loopKeeper.milliSecondsLeft() != 0)
-        {
-            continue;
-        }
-        loopKeeper.start();
-        EngineBase::updatePositionOfObjects();
-        HotKeyManager::handleHotKeys();
-    }
+        std::cout << "Updating" << std::endl;
+    };
+    EngineBase::attachUpdateFunction(updateFunction,2);
 }
 
 void RogueLikeV2::loadInitialTextures()
