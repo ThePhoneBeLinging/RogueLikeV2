@@ -31,7 +31,7 @@ void RogueLikeV2::launch()
     {
         std::cout << "Updating" << std::endl;
     };
-    EngineBase::attachUpdateFunction(updateFunction,2);
+    EngineBase::attachUpdateFunction(updateFunction,30);
 }
 
 void RogueLikeV2::loadInitialTextures()
